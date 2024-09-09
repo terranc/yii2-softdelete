@@ -18,16 +18,8 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist yiithings/yii2-softdelete "*"
+composer require yiithings/yii2-softdelete
 ```
-
-or add
-
-```
-"yiithings/yii2-softdelete": "*"
-```
-
-to the require section of your `composer.json` file.
 
 
 Usage
@@ -43,17 +35,10 @@ use yiithings\softdelete\SoftDelete;
 class Model extends \yii\db\ActiveRecord
 {
     use SoftDelete;
-
-    public function behaviors()
-    {
-        return [
-            'class' => SoftDeleteBehavior::className(),
-        ];
-    }
 }
 ```
 
-Change database table structures, add `deleted_at (int 11)` field and attached to UNIQUE index. 
+Change database table structures, add `deleted_at (timestamp)` field. 
 
 API
 ---
