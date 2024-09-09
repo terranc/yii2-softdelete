@@ -44,4 +44,12 @@ class SoftDeleteBehavior extends TimestampBehavior
             static::EVENT_BEFORE_SOFT_DELETE => $this->deletedAtAttribute,
         ]);
     }
+    protected function getValue($event)
+    {
+        if ($this->value === null) {
+            return date('Y-m-d H:i:s');
+        }
+
+        return parent::getValue($event);
+    }
 }

@@ -269,4 +269,12 @@ trait SoftDelete
 
         return $result;
     }
+
+
+    public function behaviors()
+    {
+        return array_merge(parent::behaviors(),[
+            SoftDeletesBehavior::class,
+        ]);
+    }
 }
