@@ -18,7 +18,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require yiithings/yii2-softdelete
+composer require terranc/yii2-softdelete
 ```
 
 
